@@ -1,0 +1,20 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  deploy_lambda:
+    runs-on: ununtu-latest
+    steps:
+      - uses: actions/checkout@v2 #Hace checkout al repositorio
+      - uses: actions/setup-node@v2 #Carga node con la version especifica
+        with:
+          node-version: '20'
+      - name: npm install
+        env:
+          CI: true
+        run: |
+          npm ci
