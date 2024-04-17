@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy_lambda:
-    runs-on: ununtu-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2 #Hace checkout al repositorio
       - uses: actions/setup-node@v2 #Carga node con la version especifica
